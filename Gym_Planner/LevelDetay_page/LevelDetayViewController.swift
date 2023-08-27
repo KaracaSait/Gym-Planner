@@ -80,15 +80,37 @@ class LevelDetayViewController: UIViewController {
                 
             default: break
             }
-            
-            
         }else if UserDefaults.standard.string(forKey: "sex") == "woman" {
             
-            
             switch gelenVeri {
-            case 0: print("beginner sayfası kadın")
+            case 0:
+                let a1 = level(days: "Monday")
+                let a2 = level(days: "Tuesday")
+                let a3 = level(days: "Wednesday")
+                let a4 = level(days: "Thursday")
+                let a5 = level(days: "Friday")
+                
+                day.append(a1)
+                day.append(a2)
+                day.append(a3)
+                day.append(a4)
+                day.append(a5)
+                
+                UserDefaults.standard.set("beginnerFemale", forKey: "level")
+                
             case 1: print("orta sayfası kadın")
-            case 2: print("woaw sayfası kadın")
+                let a1 = level(days: "Monday")
+                let a2 = level(days: "Tuesday")
+                let a3 = level(days: "Thursday")
+                let a4 = level(days: "Friday")
+                
+                day.append(a1)
+                day.append(a2)
+                day.append(a3)
+                day.append(a4)
+                
+                UserDefaults.standard.set("IntermediateFemale", forKey: "level")
+                
             default: break
             }
         }
@@ -119,7 +141,6 @@ extension LevelDetayViewController: UICollectionViewDelegate,UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print(indexPath.row)
         performSegue(withIdentifier: "toPremade", sender: indexPath.row)
     }
 }

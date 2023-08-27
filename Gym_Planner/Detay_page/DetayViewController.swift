@@ -66,7 +66,7 @@ class DetayViewController: UIViewController {
     }
     
     @objc func handleTap() {
-        view.endEditing(true) // Klavyeyi kapat
+        view.endEditing(true) 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -208,7 +208,7 @@ class DetayViewController: UIViewController {
     }
     
     func AddListAlert(addMove:String){
-        let alertController = UIAlertController(title: "Add to List", message: "", preferredStyle: .alert) // mesaja pls değer gir amk yaz
+        let alertController = UIAlertController(title: "Add to List", message: "", preferredStyle: .alert)
         alertController.addTextField { textfield in
             textfield.placeholder = "Sets" // kaç set
             textfield.keyboardType = .numberPad // numpad

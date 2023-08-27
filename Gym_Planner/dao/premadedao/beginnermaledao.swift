@@ -47,10 +47,7 @@ class beginnermaledao {
             
             while rs.next() {
                 let part = premade(id: Int(rs.string(forColumn: "id"))!, movement: rs.string(forColumn: "movement")!, sets: rs.string(forColumn: "sets")!, reps: rs.string(forColumn: "reps")!, day: rs.string(forColumn: "day")!)
-               /* let part = bodypart(body_id: Int(rs.string(forColumn: "body_id"))!,
-                        body_name: rs.string(forColumn: "body_name")!,
-                        body_pic: rs.string(forColumn: "body_pic")!) */
-                
+
                 liste.append(part)
             }
             

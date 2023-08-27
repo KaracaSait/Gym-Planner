@@ -48,10 +48,10 @@ class BodyMeasurementsViewController: UIViewController {
         let m1 = measure(name: "Arm Size")
         let m2 = measure(name: "Shoulder Size")
         let m3 = measure(name: "Chest Size")
-        let m4 = measure(name: "Waist Size") // bel
-        let m5 = measure(name: "Wrist Size") // bilek
+        let m4 = measure(name: "Waist Size") 
+        let m5 = measure(name: "Wrist Size")
         let m6 = measure(name: "Leg Size")
-        let m7 = measure(name: "Hip Size") // kalça
+        let m7 = measure(name: "Hip Size")
         measureListe.append(m0)
         measureListe.append(m1)
         measureListe.append(m2)

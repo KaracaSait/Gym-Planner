@@ -8,17 +8,18 @@
 import UIKit
 
 class MeasureListViewController: UIViewController {
+    
     @IBOutlet weak var measureListTableView: UITableView!
     @IBOutlet weak var measureListLabel: UILabel!
-    
     @IBOutlet weak var clearListButtonImage: UIBarButtonItem!
+    
     var measureRow: Int?
     var measureList = [MeasureSize]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.topItem?.backButtonTitle = "" // back button yazısını siliyoz
+        navigationController?.navigationBar.topItem?.backButtonTitle = ""
         
         let backgroundImage = UIImage(named: "background")
         let backgroundImageView = UIImageView(image: backgroundImage)
@@ -177,7 +178,7 @@ extension MeasureListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.reloadRows(at: [indexPath], with: .automatic) // tıklama efektini kaldırıyo
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -209,7 +210,7 @@ extension MeasureListViewController: UITableViewDataSource, UITableViewDelegate 
                     self.measureList = hipsizedao().veriOkuma()
                 }
                 UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                        }, completion: nil) // silme efekt
+                        }, completion: nil)
                 if self.measureList.count == 0 {
                     self.clearListButtonImage.isEnabled = false
                 }

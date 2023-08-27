@@ -8,6 +8,7 @@
 import UIKit
 
 class PremadeViewController: UIViewController {
+    
     @IBOutlet weak var premadeTableView: UITableView!
     @IBOutlet weak var dayLabel: UILabel!
     
@@ -67,14 +68,34 @@ class PremadeViewController: UIViewController {
                 }
             }
         }else if UserDefaults.standard.string(forKey: "sex") == "woman" {
-            switch data {
-            case 0: print("beginner sayfası kadın")
-            case 1: print("orta sayfası kadın")
-            case 2: print("woaw sayfası kadın")
-            default: break
+            if UserDefaults.standard.string(forKey: "level") == "beginnerFemale" {
+                switch data {
+                case 0: dayLabel.text = "Monday"
+                    List = beginnerfemaledao().veriOkumaA()
+                case 1: dayLabel.text = "Tuesday"
+                    List = beginnerfemaledao().veriOkumaB()
+                case 2: dayLabel.text = "Wednesday"
+                    List = beginnerfemaledao().veriOkumaC()
+                case 3: dayLabel.text = "Thursday"
+                    List = beginnerfemaledao().veriOkumaD()
+                case 4: dayLabel.text = "Friday"
+                    List = beginnerfemaledao().veriOkumaE()
+                default: break
+                }
+            }else if UserDefaults.standard.string(forKey: "level") == "IntermediateFemale" {
+                switch data {
+                case 0: dayLabel.text = "Monday"
+                    List = intermediatefemaledao().veriOkumaA()
+                case 1: dayLabel.text = "Tuesday"
+                    List = intermediatefemaledao().veriOkumaB()
+                case 2: dayLabel.text = "Thursday"
+                    List = intermediatefemaledao().veriOkumaC()
+                case 3: dayLabel.text = "Friday"
+                    List = intermediatefemaledao().veriOkumaD()
+                default: break
+                }
             }
         }
-        
     }
     
     @IBAction func infoButton(_ sender: Any) {
@@ -83,22 +104,20 @@ class PremadeViewController: UIViewController {
         alert.addAction(okeyAction)
         self.present(alert,animated: true)
     }
-    
 }
 
 extension PremadeViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return List.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let part = List[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "premadeHucre", for: indexPath) as! PremadeTableViewCell
-        //cell.detayLabel.text = part.movement_name
         cell.label.text = part.movement
         if let set = part.sets, let rep = part.reps {
             cell.setrepLabel.text = "\(set) x \(rep)"
         }
-        
         return cell
     }
 }

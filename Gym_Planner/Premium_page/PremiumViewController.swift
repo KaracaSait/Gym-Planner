@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 protocol PremiumViewControllerDelegate: AnyObject {
     func premiumDismis()
 }
@@ -36,7 +35,7 @@ class PremiumViewController: UIViewController {
         satinAlButtonImage.backgroundColor = .black
         satinAlButtonImage.layer.cornerRadius = satinAlButtonImage.frame.size.width / 20
         
-        self.premiumTableView.backgroundColor = UIColor.clear // table view background rengi
+        self.premiumTableView.backgroundColor = UIColor.clear
         let backgroundImageTableView = UIImage(named: "premiumtable")
         let backgroundViewTableView = UIImageView(image: backgroundImageTableView)
         premiumTableView.backgroundView = backgroundViewTableView
@@ -56,14 +55,11 @@ class PremiumViewController: UIViewController {
         
         premiumTableView.dataSource = self
         premiumTableView.delegate = self
-        
-        
     }
     
     @IBAction func SatinAl(_ sender: Any) {
         UserDefaults.standard.set(true, forKey: "premium")
         //print("satın alım tamamlandı")
-        // premiuma hoş geldin sayfası aç // gerek olmayabilir
         delegate?.premiumDismis()
         dismiss(animated: true, completion: nil)
            }

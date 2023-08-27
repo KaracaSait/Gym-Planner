@@ -26,7 +26,6 @@ class BodyBuildLevelViewController: UIViewController {
         
         self.BodyBuildLevelTableView.backgroundColor = UIColor.clear
 
-        
         if UserDefaults.standard.string(forKey: "sex") == "man" {
             let a1 = bodyBuildLevel(level: "Beginner", duration: "12 Weeks", dpw: "3 Days", type: "Full Body", tpw: "90 Minutes", goal: "Increase Strength")
             let a2 = bodyBuildLevel(level: "Intermediate", duration: "8 Weeks", dpw: "4 Days", type: "Split", tpw: "60 Minutes", goal: "Build Muscle")
@@ -37,21 +36,15 @@ class BodyBuildLevelViewController: UIViewController {
             listBodyLevel.append(a3)
         }else if UserDefaults.standard.string(forKey: "sex") == "woman" {
             let a1 = bodyBuildLevel(level: "Beginner", duration: "12 Weeks", dpw: "5 Days", type: "Split", tpw: "45-60 minutes", goal: "Lose Fat")
-            let a2 = bodyBuildLevel(level: "Intermediate", duration: "12 Weeks", dpw: "6 Days", type: "Split", tpw: "45-75 minutes", goal: "Build Muscle")
-            let a3 = bodyBuildLevel(level: "Intermediate", duration: "12 Weeks", dpw: "4 Days", type: "Split", tpw: "45-60 minutes", goal: "Lose Fat")
+            let a2 = bodyBuildLevel(level: "Intermediate", duration: "12 Weeks", dpw: "4 Days", type: "Split", tpw: "45-60 minutes", goal: "Lose Fat")
             
             listBodyLevel.append(a1)
             listBodyLevel.append(a2)
-            listBodyLevel.append(a3)
         }
-        
-       
         
         BodyBuildLevelTableView.dataSource = self
         BodyBuildLevelTableView.delegate = self
     }
-    
-
 }
 extension BodyBuildLevelViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,8 +64,6 @@ extension BodyBuildLevelViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let part = listBodyLevel[indexPath.row]
-        //print(indexPath.row)
         performSegue(withIdentifier: "bodyLevelToDetay", sender: indexPath.row)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

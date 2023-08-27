@@ -8,6 +8,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
     @IBOutlet weak var settingsBackImage: UIImageView!
     @IBOutlet weak var MainLabelSettings: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -150,7 +151,7 @@ class SettingsViewController: UIViewController {
             }, completion: nil )
         }
         alertController.addAction(kaydetAction)
-        iptalAction.setValue(UIColor.black, forKey: "titleTextColor") // iptal tuşunu siyah yaptık
+        iptalAction.setValue(UIColor.black, forKey: "titleTextColor")
         alertController.addAction(iptalAction)
         self.present(alertController,animated: true)
     }

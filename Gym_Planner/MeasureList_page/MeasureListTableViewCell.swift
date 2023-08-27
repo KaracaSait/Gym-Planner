@@ -17,7 +17,7 @@ class MeasureListTableViewCell: UITableViewCell {
         
         dateLabel.textColor = .gray
         
-        self.backgroundColor = UIColor.clear // hücre içi renk
+        self.backgroundColor = UIColor.clear 
         self.backgroundView = UIView()
         self.selectedBackgroundView = UIView()
     }

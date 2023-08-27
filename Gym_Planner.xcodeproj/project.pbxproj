@@ -14,7 +14,6 @@
 		6E0B64A12A9B0CCD00C35F91 /* PremadeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0B64A02A9B0CCD00C35F91 /* PremadeTableViewCell.swift */; };
 		6E0B64A42A9B0F5800C35F91 /* intermediatemaledao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0B64A32A9B0F5800C35F91 /* intermediatemaledao.swift */; };
 		6E0B64A62A9B0F6E00C35F91 /* advancedmaledao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0B64A52A9B0F6E00C35F91 /* advancedmaledao.swift */; };
-		6E0B64AA2A9B1CC700C35F91 /* gym.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6E0B64A92A9B1CC700C35F91 /* gym.sqlite */; };
 		6E23D1A62A942FF2008B5723 /* BodyMeasurementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E23D1A52A942FF2008B5723 /* BodyMeasurementsTableViewCell.swift */; };
 		6E2420DC2A918F7D003EF16C /* PremiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2420DB2A918F7D003EF16C /* PremiumTableViewCell.swift */; };
 		6E313FB22A8F99F80086298A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E313FB12A8F99F80086298A /* SettingsViewController.swift */; };
@@ -27,7 +26,7 @@
 		6E404C8C2A8AACD500F3429F /* bicepsdao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404C8B2A8AACD500F3429F /* bicepsdao.swift */; };
 		6E404C8E2A8AACDF00F3429F /* legdao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404C8D2A8AACDF00F3429F /* legdao.swift */; };
 		6E404C902A8AACE500F3429F /* abdomendao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404C8F2A8AACE500F3429F /* abdomendao.swift */; };
-		6E404C922A8AAD4900F3429F /* bodypart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404C912A8AAD4900F3429F /* bodypart.swift */; };
+		6E404C922A8AAD4900F3429F /* class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404C912A8AAD4900F3429F /* class.swift */; };
 		6E4C3AF92A99637E00E6A582 /* BodyBuildLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C3AF82A99637E00E6A582 /* BodyBuildLevelViewController.swift */; };
 		6E4C3AFC2A9970BA00E6A582 /* BodyBuildLevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C3AFB2A9970BA00E6A582 /* BodyBuildLevelTableViewCell.swift */; };
 		6E58A8422A94CB7E00072139 /* bodyweightsizedao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E58A8412A94CB7E00072139 /* bodyweightsizedao.swift */; };
@@ -49,6 +48,9 @@
 		6E8595812A8CBB5B007AA6D9 /* myplandao4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8595802A8CBB5B007AA6D9 /* myplandao4.swift */; };
 		6E8595832A8CBB61007AA6D9 /* myplandao5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8595822A8CBB61007AA6D9 /* myplandao5.swift */; };
 		6E8595852A8CBB67007AA6D9 /* myplandao6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8595842A8CBB67007AA6D9 /* myplandao6.swift */; };
+		6EA8CE292A9B68D000AEAD57 /* beginnerfemaledao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CE282A9B68D000AEAD57 /* beginnerfemaledao.swift */; };
+		6EA8CE2B2A9B694C00AEAD57 /* intermediatefemaledao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CE2A2A9B694C00AEAD57 /* intermediatefemaledao.swift */; };
+		6EA8CE2D2A9B69B500AEAD57 /* gym.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6EA8CE2C2A9B69B500AEAD57 /* gym.sqlite */; };
 		6EBDE3822A943A9A00A02AC3 /* MeasureListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDE3812A943A9A00A02AC3 /* MeasureListViewController.swift */; };
 		6EBDE3852A943C9200A02AC3 /* MeasureListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDE3842A943C9200A02AC3 /* MeasureListTableViewCell.swift */; };
 		6EBDE3872A9443B700A02AC3 /* armsizedao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDE3862A9443B700A02AC3 /* armsizedao.swift */; };
@@ -108,7 +110,6 @@
 		6E0B64A02A9B0CCD00C35F91 /* PremadeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremadeTableViewCell.swift; sourceTree = "<group>"; };
 		6E0B64A32A9B0F5800C35F91 /* intermediatemaledao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intermediatemaledao.swift; sourceTree = "<group>"; };
 		6E0B64A52A9B0F6E00C35F91 /* advancedmaledao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = advancedmaledao.swift; sourceTree = "<group>"; };
-		6E0B64A92A9B1CC700C35F91 /* gym.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = gym.sqlite; sourceTree = "<group>"; };
 		6E23D1A52A942FF2008B5723 /* BodyMeasurementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMeasurementsTableViewCell.swift; sourceTree = "<group>"; };
 		6E2420DB2A918F7D003EF16C /* PremiumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumTableViewCell.swift; sourceTree = "<group>"; };
 		6E313FB12A8F99F80086298A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +122,7 @@
 		6E404C8B2A8AACD500F3429F /* bicepsdao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bicepsdao.swift; sourceTree = "<group>"; };
 		6E404C8D2A8AACDF00F3429F /* legdao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = legdao.swift; sourceTree = "<group>"; };
 		6E404C8F2A8AACE500F3429F /* abdomendao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abdomendao.swift; sourceTree = "<group>"; };
-		6E404C912A8AAD4900F3429F /* bodypart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bodypart.swift; sourceTree = "<group>"; };
+		6E404C912A8AAD4900F3429F /* class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = class.swift; sourceTree = "<group>"; };
 		6E4C3AF82A99637E00E6A582 /* BodyBuildLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyBuildLevelViewController.swift; sourceTree = "<group>"; };
 		6E4C3AFB2A9970BA00E6A582 /* BodyBuildLevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyBuildLevelTableViewCell.swift; sourceTree = "<group>"; };
 		6E58A8412A94CB7E00072139 /* bodyweightsizedao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bodyweightsizedao.swift; sourceTree = "<group>"; };
@@ -143,6 +144,9 @@
 		6E8595802A8CBB5B007AA6D9 /* myplandao4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myplandao4.swift; sourceTree = "<group>"; };
 		6E8595822A8CBB61007AA6D9 /* myplandao5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myplandao5.swift; sourceTree = "<group>"; };
 		6E8595842A8CBB67007AA6D9 /* myplandao6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myplandao6.swift; sourceTree = "<group>"; };
+		6EA8CE282A9B68D000AEAD57 /* beginnerfemaledao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beginnerfemaledao.swift; sourceTree = "<group>"; };
+		6EA8CE2A2A9B694C00AEAD57 /* intermediatefemaledao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intermediatefemaledao.swift; sourceTree = "<group>"; };
+		6EA8CE2C2A9B69B500AEAD57 /* gym.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = gym.sqlite; sourceTree = "<group>"; };
 		6EBBFAD32A98F9610025995A /* Gym-PlannerUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Gym-PlannerUITests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		6EBDE3812A943A9A00A02AC3 /* MeasureListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureListViewController.swift; sourceTree = "<group>"; };
 		6EBDE3842A943C9200A02AC3 /* MeasureListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureListTableViewCell.swift; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 				6E0B649A2A9AFF4E00C35F91 /* beginnermaledao.swift */,
 				6E0B64A32A9B0F5800C35F91 /* intermediatemaledao.swift */,
 				6E0B64A52A9B0F6E00C35F91 /* advancedmaledao.swift */,
+				6EA8CE282A9B68D000AEAD57 /* beginnerfemaledao.swift */,
+				6EA8CE2A2A9B694C00AEAD57 /* intermediatefemaledao.swift */,
 			);
 			path = premadedao;
 			sourceTree = "<group>";
@@ -323,6 +329,21 @@
 			path = myplandao;
 			sourceTree = "<group>";
 		};
+		6EA8CE2E2A9B6A9900AEAD57 /* partdao */ = {
+			isa = PBXGroup;
+			children = (
+				6E404C812A8AAC8F00F3429F /* bodypartdao.swift */,
+				6E404C832A8AACAC00F3429F /* shoulderdao.swift */,
+				6E404C852A8AACB900F3429F /* backdao.swift */,
+				6E404C872A8AACC300F3429F /* chestdao.swift */,
+				6E404C892A8AACD000F3429F /* tricepsdao.swift */,
+				6E404C8B2A8AACD500F3429F /* bicepsdao.swift */,
+				6E404C8D2A8AACDF00F3429F /* legdao.swift */,
+				6E404C8F2A8AACE500F3429F /* abdomendao.swift */,
+			);
+			path = partdao;
+			sourceTree = "<group>";
+		};
 		6EBDE3832A943B6600A02AC3 /* MeasureList_page */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,7 +401,7 @@
 		6EE8693B2A8A914C0055EDB4 /* Gym_Planner */ = {
 			isa = PBXGroup;
 			children = (
-				6E0B64A92A9B1CC700C35F91 /* gym.sqlite */,
+				6EA8CE2C2A9B69B500AEAD57 /* gym.sqlite */,
 				6EE8693C2A8A914C0055EDB4 /* AppDelegate.swift */,
 				6EE8693E2A8A914C0055EDB4 /* SceneDelegate.swift */,
 				6EE869852A8A93E30055EDB4 /* First_page */,
@@ -395,7 +416,7 @@
 				6E313FB32A8FBE400086298A /* Settings_page */,
 				6E8595692A8C7B62007AA6D9 /* Premium_page */,
 				6EE869422A8A914C0055EDB4 /* Main.storyboard */,
-				6E404C912A8AAD4900F3429F /* bodypart.swift */,
+				6E404C912A8AAD4900F3429F /* class.swift */,
 				6E4C3AFA2A99639000E6A582 /* BodyBuildLevel_page */,
 				6E0B64962A9AFE2200C35F91 /* LevelDetay_page */,
 				6E0B64A22A9B0F1F00C35F91 /* Premade_page */,
@@ -478,14 +499,7 @@
 				6E8595792A8CBAB0007AA6D9 /* myplandao */,
 				6EBDE3882A9443BD00A02AC3 /* sizedao */,
 				6E0B64992A9AFF2B00C35F91 /* premadedao */,
-				6E404C812A8AAC8F00F3429F /* bodypartdao.swift */,
-				6E404C832A8AACAC00F3429F /* shoulderdao.swift */,
-				6E404C852A8AACB900F3429F /* backdao.swift */,
-				6E404C872A8AACC300F3429F /* chestdao.swift */,
-				6E404C892A8AACD000F3429F /* tricepsdao.swift */,
-				6E404C8B2A8AACD500F3429F /* bicepsdao.swift */,
-				6E404C8D2A8AACDF00F3429F /* legdao.swift */,
-				6E404C8F2A8AACE500F3429F /* abdomendao.swift */,
+				6EA8CE2E2A9B6A9900AEAD57 /* partdao */,
 				6E8595632A8C4FE4007AA6D9 /* daydao.swift */,
 			);
 			path = dao;
@@ -599,7 +613,7 @@
 				6EE869492A8A914D0055EDB4 /* LaunchScreen.storyboard in Resources */,
 				6EE869462A8A914D0055EDB4 /* Assets.xcassets in Resources */,
 				6EE869442A8A914C0055EDB4 /* Main.storyboard in Resources */,
-				6E0B64AA2A9B1CC700C35F91 /* gym.sqlite in Resources */,
+				6EA8CE2D2A9B69B500AEAD57 /* gym.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +664,8 @@
 				6E8595832A8CBB61007AA6D9 /* myplandao5.swift in Sources */,
 				6EBDE38A2A944D2A00A02AC3 /* chestsizedao.swift in Sources */,
 				6E404C902A8AACE500F3429F /* abdomendao.swift in Sources */,
-				6E404C922A8AAD4900F3429F /* bodypart.swift in Sources */,
+				6E404C922A8AAD4900F3429F /* class.swift in Sources */,
+				6EA8CE2B2A9B694C00AEAD57 /* intermediatefemaledao.swift in Sources */,
 				6EE8693D2A8A914C0055EDB4 /* AppDelegate.swift in Sources */,
 				6E4C3AFC2A9970BA00E6A582 /* BodyBuildLevelTableViewCell.swift in Sources */,
 				6E0B64982A9AFE5300C35F91 /* LevelDetayCollectionViewCell.swift in Sources */,
@@ -673,6 +688,7 @@
 				6E404C8E2A8AACDF00F3429F /* legdao.swift in Sources */,
 				6E58A8422A94CB7E00072139 /* bodyweightsizedao.swift in Sources */,
 				6E8595852A8CBB67007AA6D9 /* myplandao6.swift in Sources */,
+				6EA8CE292A9B68D000AEAD57 /* beginnerfemaledao.swift in Sources */,
 				6EC877E62A90371E00133624 /* AddListViewController.swift in Sources */,
 				6E404C8A2A8AACD000F3429F /* tricepsdao.swift in Sources */,
 				6E84704B2A93AE7C00AD7AD0 /* FavSecViewController.swift in Sources */,
