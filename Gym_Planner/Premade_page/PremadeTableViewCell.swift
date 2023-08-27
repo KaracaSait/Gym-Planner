@@ -1,25 +1,20 @@
 //
-//  BodyBuildLevelTableViewCell.swift
+//  PremadeTableViewCell.swift
 //  Gym_Planner
 //
-//  Created by Sait KARACA on 26.08.2023.
+//  Created by Sait KARACA on 27.08.2023.
 //
 
 import UIKit
 
-class BodyBuildLevelTableViewCell: UITableViewCell {
+class PremadeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var daysPerWeekLabel: UILabel!
-    @IBOutlet weak var workoutTypeLabel: UILabel!
-    @IBOutlet weak var timePerWorkoutLabel: UILabel!
-    @IBOutlet weak var mainGoalLabel: UILabel!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var setrepLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         self.backgroundColor = UIColor.clear
         self.backgroundView = UIView()
         self.selectedBackgroundView = UIView()

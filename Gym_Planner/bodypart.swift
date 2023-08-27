@@ -150,3 +150,37 @@ class bodyBuildLevel {
         self.goal = goal
     }
 }
+
+
+class premade {
+    var id:Int?
+    var movement:String?
+    var sets:String?
+    var reps:String?
+    var day:String?
+    
+    init() {
+
+    }
+    
+    init(id:Int,movement:String,sets:String,reps:String,day:String) {
+        self.id = id
+        self.movement = movement
+        self.sets = sets
+        self.reps = reps
+        self.day = day
+    }
+}
+
+class level {
+    var days:String?
+    
+    
+    init() {
+        
+    }
+    init(days: String) {
+        self.days = days
+    }
+}
+

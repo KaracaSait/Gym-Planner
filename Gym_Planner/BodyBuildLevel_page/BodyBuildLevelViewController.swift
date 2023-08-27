@@ -23,11 +23,13 @@ class BodyBuildLevelViewController: UIViewController {
         backgroundImageView.frame = self.view.bounds
         backgroundImageView.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImageView, at: 0)
+        
+        self.BodyBuildLevelTableView.backgroundColor = UIColor.clear
 
         
         if UserDefaults.standard.string(forKey: "sex") == "man" {
             let a1 = bodyBuildLevel(level: "Beginner", duration: "12 Weeks", dpw: "3 Days", type: "Full Body", tpw: "90 Minutes", goal: "Increase Strength")
-            let a2 = bodyBuildLevel(level: "Intermediate", duration: "9 Weeks", dpw: "4 Days", type: "Split", tpw: "60 Minutes", goal: "Strength") // bunu düzenle
+            let a2 = bodyBuildLevel(level: "Intermediate", duration: "8 Weeks", dpw: "4 Days", type: "Split", tpw: "60 Minutes", goal: "Build Muscle")
             let a3 = bodyBuildLevel(level: "Advanced", duration: "10 Weeks", dpw: "4 Days", type: "Split", tpw: "50 Minutes", goal: "Build Muscle")
             
             listBodyLevel.append(a1)
