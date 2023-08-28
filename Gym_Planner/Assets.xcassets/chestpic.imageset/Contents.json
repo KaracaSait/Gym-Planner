@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "chestpic 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "chestpic.png",
+      "filename" : "chestpic 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "chestpic 1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "tableviewprogram.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "tableviewprogram.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

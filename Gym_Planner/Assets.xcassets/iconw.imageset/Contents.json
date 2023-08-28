@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "add_button.png",
+      "filename" : "beyazlogohf.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "beyazlogoh@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "beyazlogoh@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

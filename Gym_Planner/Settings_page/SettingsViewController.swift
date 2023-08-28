@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
         backgroundImageView.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImageView, at: 0)
         
-        //logoImage.image = UIImage(named: "icon_white")
+        logoImage.image = UIImage(named: "iconw")
         
         MainLabelSettings.textColor = .white
         userNameLabel.textColor = .white

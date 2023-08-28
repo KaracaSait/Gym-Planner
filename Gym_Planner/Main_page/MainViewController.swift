@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
         
         body = bodypartdao().veriOkuma()
         
-        navigationController?.navigationBar.topItem?.backButtonTitle = "" // back button yazısını siliyoz
+        navigationController?.navigationBar.topItem?.backButtonTitle = "" 
         
         let backgroundImage = UIImage(named: "background")
         let backgroundImageView = UIImageView(image: backgroundImage)
@@ -44,12 +44,12 @@ class MainViewController: UIViewController {
         backgroundImageView.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImageView, at: 0)
         
-        self.ProgramTableView.backgroundColor = UIColor.clear // table view background rengi
-        let backgroundImageTableView = UIImage(named: "tableviewprogram") // table view background resmi
+        self.ProgramTableView.backgroundColor = UIColor.clear
+        let backgroundImageTableView = UIImage(named: "tableviewprogram")
         let backgroundViewTableView = UIImageView(image: backgroundImageTableView)
         ProgramTableView.backgroundView = backgroundViewTableView
         
-        BodyCollectionView.backgroundColor = UIColor.clear //  arka plan rengi
+        BodyCollectionView.backgroundColor = UIColor.clear
         
         ProgramTableView.dataSource = self
         ProgramTableView.delegate = self

@@ -263,9 +263,7 @@ extension PlanViewController:UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.reloadRows(at: [indexPath], with: .automatic) // tıklama efektini kaldırıyo
-    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             let silAction = UIContextualAction(style: .destructive, title: "Delete"){ (contextualAction, view, boolValue) in
                 let del = self.PlanList[indexPath.row].movement_id!

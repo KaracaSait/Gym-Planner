@@ -64,8 +64,6 @@ class BodyMeasurementsViewController: UIViewController {
         }
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "measureToMeasureList" {
@@ -173,10 +171,6 @@ extension BodyMeasurementsViewController: UITableViewDelegate, UITableViewDataSo
             self.performSegue(withIdentifier: "measureToMeasureList", sender: indexPath.item)
         }
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.reloadRows(at: [indexPath], with: .automatic) // tıklama efektini kaldırıyo
     }
     
     func addDataAlert(indexPath:IndexPath){

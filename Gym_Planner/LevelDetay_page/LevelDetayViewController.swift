@@ -98,7 +98,7 @@ class LevelDetayViewController: UIViewController {
                 
                 UserDefaults.standard.set("beginnerFemale", forKey: "level")
                 
-            case 1: print("orta sayfası kadın")
+            case 1:
                 let a1 = level(days: "Monday")
                 let a2 = level(days: "Tuesday")
                 let a3 = level(days: "Thursday")

@@ -199,7 +199,7 @@ class DetayViewController: UIViewController {
     }
 
     func noList(){
-        let errorAlert = UIAlertController(title: "Error", message: "There is No Usuable List", preferredStyle: .alert) // düzenle karşim
+        let errorAlert = UIAlertController(title: "Error", message: "There is No Usuable List", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Add List", style: .destructive){ action in
             self.performSegue(withIdentifier: "detayToMyplan", sender: nil)
         }
@@ -210,12 +210,12 @@ class DetayViewController: UIViewController {
     func AddListAlert(addMove:String){
         let alertController = UIAlertController(title: "Add to List", message: "", preferredStyle: .alert)
         alertController.addTextField { textfield in
-            textfield.placeholder = "Sets" // kaç set
-            textfield.keyboardType = .numberPad // numpad
+            textfield.placeholder = "Sets"
+            textfield.keyboardType = .numberPad
         }
         alertController.addTextField { textfield in
-            textfield.placeholder = "Reps" // kaç tekrar
-            textfield.keyboardType = .numberPad // numpad
+            textfield.placeholder = "Reps"
+            textfield.keyboardType = .numberPad
         }
         let kaydetAction = UIAlertAction(title: "Save", style: .destructive){ action in
              if let set1 = alertController.textFields?[0].text, !set1.isEmpty,
@@ -268,10 +268,6 @@ extension DetayViewController: UITableViewDataSource,UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.reloadRows(at: [indexPath], with: .automatic) // tıklama efektini kaldırıyo
-    }
-   
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         self.searchbar.resignFirstResponder()
         let silAction = UIContextualAction(style: .destructive, title: "Delete"){ (contextualAction, view, boolValue) in
@@ -479,8 +475,7 @@ extension DetayViewController: MyplanViewControllerDelegate {
 extension DetayViewController:UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Arama sonuç : \(searchText)")
-        
+       
         searchWord = searchText
         
         if searchText == "" {
