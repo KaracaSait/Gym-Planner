@@ -13,8 +13,13 @@ class BodyMeasurementsViewController: UIViewController {
     @IBOutlet weak var bodyMass: UIButton!
     @IBOutlet weak var bodyFat: UIButton!
     
-    var a:Double?
-    var b:Double?
+    var bmiWeight:Double?
+    var bmiHeight:Double?
+    
+    var bfpHeight:Double?
+    var bfpNeck:Double?
+    var bfpWaist:Double?
+    var bfpHip:Double?
     
     var measureListe = [measure]()
     
@@ -39,7 +44,7 @@ class BodyMeasurementsViewController: UIViewController {
         bodyFat.backgroundColor = .black
         bodyFat.layer.cornerRadius = bodyFat.frame.size.width / 15
         
-        bodyMeasurementsTableView.backgroundColor = UIColor.clear // table view background rengi
+        bodyMeasurementsTableView.backgroundColor = UIColor.clear
         
         bodyMeasurementsTableView.delegate = self
         bodyMeasurementsTableView.dataSource = self
@@ -82,12 +87,119 @@ class BodyMeasurementsViewController: UIViewController {
     @IBAction func bodyFatButton(_ sender: Any) {
         bodyFatAlert()
     }
+    
     func bodyFatAlert(){
-        let errorAlert = UIAlertController(title: "Body Fat Percentage", message: "Will be added to the program soon", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
-        errorAlert.addAction(okAction)
-        self.present(errorAlert, animated: true, completion: nil)
+        
+        let alertController = UIAlertController(title: "Body Fat Percentage", message: "", preferredStyle: .alert)
+        alertController.addTextField { textfield in
+            if UserDefaults.standard.string(forKey: "uzunluk") == "cm" {
+                textfield.placeholder = "Height -- Cm"
+                textfield.keyboardType = .numberPad
+            }else if UserDefaults.standard.string(forKey: "uzunluk") == "inc" {
+                textfield.placeholder = "Height -- Inch"
+                textfield.keyboardType = .numberPad
+            }
+        }
+        alertController.addTextField { textfield in
+            if UserDefaults.standard.string(forKey: "uzunluk") == "cm" {
+                textfield.placeholder = "Neck Circumference -- Cm"
+                textfield.keyboardType = .numberPad
+            }else if UserDefaults.standard.string(forKey: "uzunluk") == "inc" {
+                textfield.placeholder = "Neck Circumference -- Inch"
+                textfield.keyboardType = .numberPad
+            }
+        }
+        
+        alertController.addTextField { textfield in
+            if UserDefaults.standard.string(forKey: "uzunluk") == "cm" {
+                textfield.placeholder = "Waist Circumference -- Cm"
+                textfield.keyboardType = .numberPad
+            }else if UserDefaults.standard.string(forKey: "uzunluk") == "inc" {
+                textfield.placeholder = "Waist Circumference -- Inch"
+                textfield.keyboardType = .numberPad
+            }
+        }
+        
+        if UserDefaults.standard.string(forKey: "sex") == "woman" {
+            
+            alertController.addTextField { textfield in
+                if UserDefaults.standard.string(forKey: "uzunluk") == "cm" {
+                    textfield.placeholder = "Hip Circumference -- Cm"
+                    textfield.keyboardType = .numberPad
+                }else if UserDefaults.standard.string(forKey: "uzunluk") == "inc" {
+                    textfield.placeholder = "Hip Circumference -- Inch"
+                    textfield.keyboardType = .numberPad
+                }
+            }
+            
+        }
+        let kaydetAction = UIAlertAction(title: "Calculate", style: .destructive){ action in
+            if let Height = alertController.textFields?[0].text, !Height.isEmpty,
+               let Neck = alertController.textFields?[1].text, !Neck.isEmpty,
+               let Waist = alertController.textFields?[2].text, !Waist.isEmpty {
+                if UserDefaults.standard.string(forKey: "uzunluk") == "cm" {
+                    self.bfpHeight = Double(Height)
+                    self.bfpNeck = Double(Neck)
+                    self.bfpWaist = Double(Waist)
+                }else if UserDefaults.standard.string(forKey: "uzunluk") == "inc" {
+                    self.bfpHeight = Double(Height)! * 2.54
+                    self.bfpNeck = Double(Neck)! * 2.54
+                    self.bfpWaist = Double(Waist)! * 2.54
+                }
+                if UserDefaults.standard.string(forKey: "sex") == "woman" {
+                    if let Hip = alertController.textFields?[3].text, !Hip.isEmpty {
+                        if UserDefaults.standard.string(forKey: "uzunluk") == "cm" {
+                            self.bfpHip = Double(Hip)
+                        }else if UserDefaults.standard.string(forKey: "uzunluk") == "inc" {
+                            self.bfpHip = Double(Hip)! * 2.54
+                        }
+                        let formul = 495 / (1.29579 - 0.35004 * log10(self.bfpWaist! + self.bfpHip! - self.bfpNeck!) + 0.22100 * log10(self.bfpHeight!)) - 450
+                        if formul <= 14 {
+                            self.InfoAlert(info: "The body has a very low body fat percentage.")
+                        }else if 14 < formul && formul <= 20{
+                            self.InfoAlert(info: "The body has an ideal body fat percentage for an athlete.")
+                        }else if 20 < formul && formul <= 24 {
+                            self.InfoAlert(info: "The body has an ideal body fat percentage for a fitness enthusiast.")
+                        }else if 24 < formul && formul <= 32 {
+                            self.InfoAlert(info: "The body has an ideal body fat percentage.")
+                        }else{
+                            self.InfoAlert(info: "The body has a very high body fat percentage.")
+                        }
+                    }else {
+                        let errorAlert = UIAlertController(title: "Error", message: "Please fill in all fields", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+                        errorAlert.addAction(okAction)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    }
+                }
+                if UserDefaults.standard.string(forKey: "sex") == "man" {
+                    let formul = 495 / (1.0324 - 0.19077 * log10(self.bfpWaist! - self.bfpNeck!) + 0.15456 *  log10(self.bfpHeight!)) - 450
+                        if formul <= 6 {
+                            self.InfoAlert(info: "The body has a very low body fat percentage.")
+                        }else if 6 < formul && formul <= 13 {
+                            self.InfoAlert(info: "The body has an ideal body fat percentage for an athlete.")
+                        }else if 13 < formul && formul <= 17 {
+                            self.InfoAlert(info: "The body has an ideal body fat percentage for a fitness enthusiast.")
+                        }else if 17 < formul && formul <= 24 {
+                            self.InfoAlert(info: "The body has an ideal body fat percentage.")
+                        }else{
+                            self.InfoAlert(info: "The body has a very high body fat percentage.")
+                        }
+                }
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: "Please fill in all fields", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+                errorAlert.addAction(okAction)
+                self.present(errorAlert, animated: true, completion: nil)
+            }
+        }
+        let iptalAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        iptalAction.setValue(UIColor.black, forKey: "titleTextColor")
+        alertController.addAction(kaydetAction)
+        alertController.addAction(iptalAction)
+        self.present(alertController,animated: true)
     }
+    
     func bodyMassAlert(){
         let alertController = UIAlertController(title: "Body Mass Index", message: "", preferredStyle: .alert)
         alertController.addTextField { textfield in
@@ -112,17 +224,17 @@ class BodyMeasurementsViewController: UIViewController {
             if let weight = alertController.textFields?[0].text, !weight.isEmpty,
                let height = alertController.textFields?[1].text, !height.isEmpty {
                 if UserDefaults.standard.string(forKey: "agirlik") == "kg" {
-                    self.a = Double(weight)
+                    self.bmiWeight = Double(weight)
                 }else if UserDefaults.standard.string(forKey: "agirlik") == "lbs" {
-                    self.a = Double(weight)! * 0.45359237
+                    self.bmiWeight = Double(weight)! * 0.45359237
                 }
                 if UserDefaults.standard.string(forKey: "uzunluk") == "cm" {
-                    self.b = Double(height)
+                    self.bmiHeight = Double(height)
                 }else if UserDefaults.standard.string(forKey: "uzunluk") == "inc" {
-                    self.b = Double(height)! * 2.54
+                    self.bmiHeight = Double(height)! * 2.54
                 }
-                let metre = self.b! / 100
-                let bmi = self.a! / (metre * metre)
+                let metre = self.bmiHeight! / 100
+                let bmi = self.bmiWeight! / (metre * metre)
                 if bmi <= 18.5 {
                     self.InfoAlert(info:"Under ideal weight")
                 }else if 18.5 < bmi && bmi <= 24.9 {
@@ -258,7 +370,7 @@ extension BodyMeasurementsViewController: UITableViewDelegate, UITableViewDataSo
         }
         let iptalAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(kaydetAction)
-        iptalAction.setValue(UIColor.black, forKey: "titleTextColor") // iptal tuşunu siyah yaptık
+        iptalAction.setValue(UIColor.black, forKey: "titleTextColor") 
         alertController.addAction(iptalAction)
         self.present(alertController,animated: true)
     }
