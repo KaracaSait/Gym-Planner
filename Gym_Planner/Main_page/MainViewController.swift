@@ -264,16 +264,16 @@ extension MainViewController: UITableViewDataSource,UITableViewDelegate{
         }
         let kaydetAction = UIAlertAction(title: "Yes", style: .destructive) { action in
             if UserDefaults.standard.bool(forKey: "premium") == false {
-                removeAllCells() // tüm tikleri sil
+                removeAllCells()
             } else {
-                removeAllCells() // tüm tikleri sil
+                removeAllCells()
                 if self.dayList.count > 1 {
                     self.performSegue(withIdentifier: "mainToFavSec", sender: nil)
                 }
             }
         }
         let iptalAction = UIAlertAction(title: "No", style: .cancel) { action in
-            removeLastCells() //print("son tiki sil")
+            removeLastCells()
         }
         iptalAction.setValue(UIColor.black, forKey: "titleTextColor")
         alertController.addAction(kaydetAction)
@@ -289,7 +289,6 @@ extension MainViewController: UICollectionViewDataSource,UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bodyHucre", for: indexPath) as! BodyCollectionViewCell
         cell.hareketLabel.text = body[indexPath.row].body_name
-        //cell.bodyPic.image = UIImage(named: "bicepspic")
         cell.bodyPic.image = UIImage(named: body[indexPath.row].body_pic!)
         return cell
     }

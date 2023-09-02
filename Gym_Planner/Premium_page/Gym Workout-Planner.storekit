@@ -1,0 +1,35 @@
+{
+  "identifier" : "1185720E",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : true,
+      "internalID" : "6463875310",
+      "localizations" : [
+        {
+          "description" : "Access all features with premium",
+          "displayName" : "Gym Planner Premium",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "gymplanner_premium",
+      "referenceName" : "Premium",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6463869112",
+    "_developerTeamID" : "MC4355596S",
+    "_lastSynchronizedDate" : 715357517.21058297
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

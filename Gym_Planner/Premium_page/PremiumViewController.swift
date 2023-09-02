@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import StoreKit
+
+let productID = "gymplanner_premium"
 
 protocol PremiumViewControllerDelegate: AnyObject {
     func premiumDismis()
@@ -17,6 +20,7 @@ class PremiumViewController: UIViewController {
 
     @IBOutlet weak var premiumLogo: UIImageView!
     @IBOutlet weak var satinAlButtonImage: UIButton!
+    @IBOutlet weak var restoreButtonImage: UIButton!
     @IBOutlet weak var premiumTableView: UITableView!
     
     var featureList = [premium]()
@@ -24,6 +28,8 @@ class PremiumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SKPaymentQueue.default().add(self)
+        
         let backgroundImage = UIImage(named: "background")
         let backgroundImageView = UIImageView(image: backgroundImage)
         backgroundImageView.frame = self.view.bounds
@@ -34,6 +40,11 @@ class PremiumViewController: UIViewController {
         satinAlButtonImage.setTitle("Get Premium", for: .normal)
         satinAlButtonImage.backgroundColor = .black
         satinAlButtonImage.layer.cornerRadius = satinAlButtonImage.frame.size.width / 20
+        
+        restoreButtonImage.tintColor = .white
+        restoreButtonImage.setTitle("Restore", for: .normal)
+        restoreButtonImage.backgroundColor = .black
+        restoreButtonImage.layer.cornerRadius = restoreButtonImage.frame.size.width / 20
         
         self.premiumTableView.backgroundColor = UIColor.clear
         let backgroundImageTableView = UIImage(named: "premiumtable")
@@ -58,11 +69,20 @@ class PremiumViewController: UIViewController {
     }
     
     @IBAction func SatinAl(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "premium")
-        //print("satın alım tamamlandı")
-        delegate?.premiumDismis()
-        dismiss(animated: true, completion: nil)
+        purchaseProduct()
            }
+    
+    @IBAction func restore(_ sender: Any) {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    func purchaseProduct() {
+        if SKPaymentQueue.canMakePayments() {
+            let payment = SKMutablePayment()
+            payment.productIdentifier = productID
+            SKPaymentQueue.default().add(payment)
+        }
+    }
+    
     }
 
 extension PremiumViewController: UITableViewDataSource,UITableViewDelegate {
@@ -77,5 +97,42 @@ extension PremiumViewController: UITableViewDataSource,UITableViewDelegate {
         cell.premiumLabel.text = part.feature
         return cell
     }
+    
+}
+
+extension PremiumViewController: SKPaymentTransactionObserver {
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchased:
+                UserDefaults.standard.set(true, forKey: "premium")
+                delegate?.premiumDismis()
+                dismiss(animated: true, completion: nil)
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .failed:
+                if let error = transaction.error as? SKError {
+                                let errorMessage = error.localizedDescription
+                                showAlert(title: "Error", message: errorMessage)
+                           }
+                
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .restored:
+                UserDefaults.standard.set(true, forKey: "premium")
+                delegate?.premiumDismis()
+                dismiss(animated: true, completion: nil)
+                SKPaymentQueue.default().finishTransaction(transaction)
+            default:
+                break
+            }
+        }
+    }
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
     
 }

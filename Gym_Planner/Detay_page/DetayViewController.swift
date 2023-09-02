@@ -226,7 +226,7 @@ class DetayViewController: UIViewController {
                 (1...99).contains(inputValue2) {
                    if UserDefaults.standard.bool(forKey: "premium") == false {
                        if self.dayList.count == 1 {
-                           myplandao().veriEkle(movement_name: addMove, set1: set1, set2: set2) // premium hesap yok tek liste var ona eklecek
+                           myplandao().veriEkle(movement_name: addMove, set1: set1, set2: set2)
                        }
                    } else {
                        if self.dayList.count > 1 {
@@ -316,7 +316,7 @@ extension DetayViewController: UITableViewDataSource,UITableViewDelegate {
                     }
                 }
             UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                    }, completion: nil) // silme efekti
+                    }, completion: nil) 
             self.detayTableView.reloadData()
         }
         let duzenleAction = UIContextualAction(style: .normal, title: "Edit"){ (contextualAction, view, boolValue) in

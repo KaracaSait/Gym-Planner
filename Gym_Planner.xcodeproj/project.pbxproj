@@ -14,6 +14,7 @@
 		6E0B64A12A9B0CCD00C35F91 /* PremadeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0B64A02A9B0CCD00C35F91 /* PremadeTableViewCell.swift */; };
 		6E0B64A42A9B0F5800C35F91 /* intermediatemaledao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0B64A32A9B0F5800C35F91 /* intermediatemaledao.swift */; };
 		6E0B64A62A9B0F6E00C35F91 /* advancedmaledao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0B64A52A9B0F6E00C35F91 /* advancedmaledao.swift */; };
+		6E1D8C142AA0C2FB0071168D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D8C132AA0C2FB0071168D /* StoreKit.framework */; };
 		6E23D1A62A942FF2008B5723 /* BodyMeasurementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E23D1A52A942FF2008B5723 /* BodyMeasurementsTableViewCell.swift */; };
 		6E2420DC2A918F7D003EF16C /* PremiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2420DB2A918F7D003EF16C /* PremiumTableViewCell.swift */; };
 		6E313FB22A8F99F80086298A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E313FB12A8F99F80086298A /* SettingsViewController.swift */; };
@@ -110,6 +111,7 @@
 		6E0B64A02A9B0CCD00C35F91 /* PremadeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremadeTableViewCell.swift; sourceTree = "<group>"; };
 		6E0B64A32A9B0F5800C35F91 /* intermediatemaledao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intermediatemaledao.swift; sourceTree = "<group>"; };
 		6E0B64A52A9B0F6E00C35F91 /* advancedmaledao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = advancedmaledao.swift; sourceTree = "<group>"; };
+		6E1D8C132AA0C2FB0071168D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6E23D1A52A942FF2008B5723 /* BodyMeasurementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMeasurementsTableViewCell.swift; sourceTree = "<group>"; };
 		6E2420DB2A918F7D003EF16C /* PremiumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumTableViewCell.swift; sourceTree = "<group>"; };
 		6E313FB12A8F99F80086298A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		6EE8698A2A8A94660055EDB4 /* BodyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EE8698C2A8A94750055EDB4 /* DetayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayTableViewCell.swift; sourceTree = "<group>"; };
 		6EF5A8BE2A8B116E009235A6 /* myplandao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myplandao.swift; sourceTree = "<group>"; };
+		6EFC77DB2AA37D4A0042EC76 /* Gym Workout-Planner.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gym Workout-Planner.storekit"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EE8696E2A8A91700055EDB4 /* libsqlite3.tbd in Frameworks */,
+				6E1D8C142AA0C2FB0071168D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 			children = (
 				6E8595672A8C7B54007AA6D9 /* PremiumViewController.swift */,
 				6E2420DB2A918F7D003EF16C /* PremiumTableViewCell.swift */,
+				6EFC77DB2AA37D4A0042EC76 /* Gym Workout-Planner.storekit */,
 			);
 			path = Premium_page;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 		6EE8696C2A8A91660055EDB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E1D8C132AA0C2FB0071168D /* StoreKit.framework */,
 				6EE8696D2A8A91660055EDB4 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
@@ -902,7 +908,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.saitkaraca.gymplanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -910,7 +916,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Gym_Planner/Gym_Planner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -941,14 +947,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.saitkaraca.gymplanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Gym_Planner/Gym_Planner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

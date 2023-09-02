@@ -794,6 +794,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfp-IY-aan">
+                                <rect key="frame" x="140" y="70" width="233" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="restore:" destination="gJJ-3n-zZQ" eventType="touchUpInside" id="qxm-ey-bxV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sQe-ZW-9GI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -805,12 +813,15 @@
                             <constraint firstItem="fzN-pm-ZWw" firstAttribute="top" secondItem="sQe-ZW-9GI" secondAttribute="top" constant="300" id="Clw-Rp-8bP"/>
                             <constraint firstItem="PMs-Gh-nrd" firstAttribute="leading" secondItem="sQe-ZW-9GI" secondAttribute="leading" constant="20" id="CzV-MV-VOx"/>
                             <constraint firstItem="sQe-ZW-9GI" firstAttribute="trailing" secondItem="P3E-gh-JW1" secondAttribute="trailing" constant="20" id="EXt-k8-ieq"/>
+                            <constraint firstItem="Kfp-IY-aan" firstAttribute="top" secondItem="sQe-ZW-9GI" secondAttribute="top" constant="70" id="FWk-zK-59U"/>
                             <constraint firstItem="Ony-El-cdB" firstAttribute="leading" secondItem="sQe-ZW-9GI" secondAttribute="leading" constant="20" id="JVV-xs-yfh"/>
+                            <constraint firstItem="Kfp-IY-aan" firstAttribute="leading" secondItem="PMs-Gh-nrd" secondAttribute="trailing" constant="20" id="Noa-9h-V1G"/>
                             <constraint firstItem="sQe-ZW-9GI" firstAttribute="trailing" secondItem="fzN-pm-ZWw" secondAttribute="trailing" constant="10" id="bfx-n6-2Zk"/>
                             <constraint firstItem="sQe-ZW-9GI" firstAttribute="trailing" secondItem="M3C-7J-cF8" secondAttribute="trailing" constant="20" id="fJ2-C8-asy"/>
                             <constraint firstItem="sQe-ZW-9GI" firstAttribute="trailing" secondItem="Ony-El-cdB" secondAttribute="trailing" constant="20" id="g8f-uK-QnT"/>
                             <constraint firstItem="fzN-pm-ZWw" firstAttribute="leading" secondItem="sQe-ZW-9GI" secondAttribute="leading" constant="10" id="lFq-wV-Qxn"/>
                             <constraint firstItem="sQe-ZW-9GI" firstAttribute="bottom" secondItem="fzN-pm-ZWw" secondAttribute="bottom" constant="100" id="mk3-Is-l7R"/>
+                            <constraint firstItem="sQe-ZW-9GI" firstAttribute="trailing" secondItem="Kfp-IY-aan" secondAttribute="trailing" constant="20" id="qcE-WI-hVa"/>
                             <constraint firstItem="M3C-7J-cF8" firstAttribute="top" secondItem="PMs-Gh-nrd" secondAttribute="bottom" constant="20" id="rY2-WJ-JTb"/>
                             <constraint firstItem="sQe-ZW-9GI" firstAttribute="bottom" secondItem="Ony-El-cdB" secondAttribute="bottom" constant="50" id="y5k-db-bQ4"/>
                         </constraints>
@@ -819,6 +830,7 @@
                     <connections>
                         <outlet property="premiumLogo" destination="PMs-Gh-nrd" id="o0H-hT-nBp"/>
                         <outlet property="premiumTableView" destination="fzN-pm-ZWw" id="gHm-g8-w1W"/>
+                        <outlet property="restoreButtonImage" destination="Kfp-IY-aan" id="lwX-vW-Fp8"/>
                         <outlet property="satinAlButtonImage" destination="Ony-El-cdB" id="17T-el-cik"/>
                     </connections>
                 </viewController>
@@ -1661,7 +1673,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DI7-C3-E7i"/>
+        <segue reference="prs-yg-T8w"/>
         <segue reference="fAp-2o-NLl"/>
         <segue reference="m3W-FP-20m"/>
     </inferredMetricsTieBreakers>
@@ -1669,7 +1681,7 @@
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="104"/>
         <image name="blackbar" width="9" height="80.5"/>
         <image name="dot" width="35" height="35"/>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="gearshape" catalog="system" width="32" height="32"/>
         <image name="info.circle.fill" catalog="system" width="128" height="123"/>
         <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="103" height="128"/>

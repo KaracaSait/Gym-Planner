@@ -27,7 +27,7 @@ class PlanViewController: UIViewController {
         backgroundImageView.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImageView, at: 0)
         
-        self.planTableView.backgroundColor = UIColor.clear // table view background rengi
+        self.planTableView.backgroundColor = UIColor.clear
         
         favS()
         
@@ -296,7 +296,7 @@ extension PlanViewController:UITableViewDelegate, UITableViewDataSource {
                     self.PlanList = myplandao8().veriOkumaDetay()
                 }
                 UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                        }, completion: nil) // silme efekt
+                        }, completion: nil) 
                 self.planTableView.reloadData()
             }
             return UISwipeActionsConfiguration(actions: [silAction])

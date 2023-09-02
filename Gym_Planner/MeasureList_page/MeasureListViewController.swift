@@ -121,7 +121,7 @@ class MeasureListViewController: UIViewController {
         }
         let iptalAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(resAction)
-        iptalAction.setValue(UIColor.black, forKey: "titleTextColor") // iptal tuşunu siyah yaptık
+        iptalAction.setValue(UIColor.black, forKey: "titleTextColor") 
         alertController.addAction(iptalAction)
         self.present(alertController,animated: true)
     }

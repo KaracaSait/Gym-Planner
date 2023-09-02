@@ -50,14 +50,12 @@ class FirstViewController: UIViewController {
         
         agePickerWiew.delegate = self
         agePickerWiew.dataSource = self
-        agePickerWiew.selectRow(14, inComponent: 0, animated: false) // 24 den başlıyo
-        //image.image = UIImage(named: "firstpageimage")
+        agePickerWiew.selectRow(14, inComponent: 0, animated: false) // start age 24
         
-       
         if UserDefaults.standard.bool(forKey: "firstLaunch") {
-            performSegue(withIdentifier: "firstToMain", sender: nil) // İlk kez açılmıyor
+            performSegue(withIdentifier: "firstToMain", sender: nil) // !firstLaunch
         } else {
-            veriTabaniKopyala() // İlk kez açılıyor
+            veriTabaniKopyala() // firstLaunch
             UserDefaults.standard.set( 0 , forKey: "Fav")
             UserDefaults.standard.set("Day 1", forKey: "savedText")
             UserDefaults.standard.set("cm", forKey: "uzunluk")

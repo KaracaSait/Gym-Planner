@@ -66,7 +66,7 @@ class MyplanViewController: UIViewController {
 extension MyplanViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if self.dayList.count == 9 { // sayfa sınırı
+        if self.dayList.count == 9 { // page limit
             return dayList.count
         }else{
             return dayList.count + 1
@@ -106,7 +106,7 @@ extension MyplanViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 listeEkle()
             }else {
                 if UserDefaults.standard.bool(forKey: "premium") == false {
-                    performSegue(withIdentifier: "toPremium", sender: nil) // premium hesap iste
+                    performSegue(withIdentifier: "toPremium", sender: nil)
                 } else {
                     listeEkle()
                 }
@@ -136,7 +136,7 @@ extension MyplanViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         let iptalAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(kaydetAction)
-        iptalAction.setValue(UIColor.black, forKey: "titleTextColor") // iptal tuşunu siyah yaptık
+        iptalAction.setValue(UIColor.black, forKey: "titleTextColor") 
         alertController.addAction(iptalAction)
         self.present(alertController,animated: true)
     }
